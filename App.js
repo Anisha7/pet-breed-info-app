@@ -69,11 +69,16 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'purple',
+    color: 'white',
   },
   text: {
-    margin: 10,
-    fontSize: 36
+    margin: 30,
+    fontSize: 36,
+    alignItems: 'center',
+    textAlign: 'center',
+    marginTop: 50,
   }, 
   list: {
     width: '100%',
@@ -85,14 +90,14 @@ const styles = StyleSheet.create({
   },
   button: {
     alignItems: 'center',
-    backgroundColor: 'orange',
+    backgroundColor: 'pink',
     padding: 15,
     margin: 10,
     borderRadius: 20,
   },
   selectedButton: {
     alignItems: 'center',
-    backgroundColor: 'pink',
+    backgroundColor: 'orange',
     padding: 15,
     margin: 10,
     borderRadius: 20,
