@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text, FlatList, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, Text, TouchableHighlight, FlatList } from 'react-native';
 import BreedCell from './breedCell'
+import ListCell from './listCell'
 import { petTypes, cats, dogs } from './breeds'
 
-console.log(petTypes)
+// console.log(petTypes)
 
 export default class App extends React.Component {
   constructor(props) {
@@ -11,15 +12,23 @@ export default class App extends React.Component {
     this.state = {
       selectedBreed : 'cat_breeds',
     }
+
+    // create lists cats and dogs
   }
 
-  
+  renderItems = ({item, index}) => {
+    // console.log(item)
+    return (
+      <BreedCell data={item} breed={item.breed}/>
+    )
+  }
+
   buttons() {
     const items = petTypes.filter((val) => {
       return val !== 'default'
     }).map((val) => {
       let currStyle = styles.button
-      if (this.state.selectedBreed == val) {
+      if (this.state.selectedBreed === val) {
         currStyle = styles.selectedButton
       }
       return (
@@ -34,12 +43,7 @@ export default class App extends React.Component {
     return items
   }
 
-  renderItems({item, index}) {
-    // console.log(item)
-    return (
-      <BreedCell data={item} breed={item.breed}/>
-    )
-  }
+  
   
   render() {
     console.log(this.state.selectedBreed)
@@ -56,12 +60,13 @@ export default class App extends React.Component {
       <View style={styles.container}>
        <Text style={styles.text}>Pet Breeds</Text>
        <View>{this.buttons()}</View>
-       <FlatList 
-          style={styles.list}
-          data = {breed}
-          keyExtractor={(item, index) => `${index}-${item.breed}`}
-          renderItem={this.renderItems}
-       />
+       {/* <FlatList 
+                style={styles.list}
+                data = {breed}
+                keyExtractor={(item, index) => `${index}-${item.breed}`}
+                renderItem={this.renderItems}
+            /> */}
+        <ListCell data={breed}/>
       </View>
     );
   }

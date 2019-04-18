@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 15346,
+  "devToolsPort": 19003,
+  "expoServerPort": 19004,
+  "packagerPort": 19005,
+  "packagerPid": 41713,
   "expoServerNgrokUrl": "https://77-i87.anonymous.pet-breed-info-app.exp.direct",
   "packagerNgrokUrl": "https://packager.77-i87.anonymous.pet-breed-info-app.exp.direct",
-  "ngrokPid": 15366
+  "ngrokPid": 41737
 }
